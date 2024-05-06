@@ -8,18 +8,39 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Company',
+            name="Company",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50, unique=True)),
-                ('status', models.CharField(choices=[('Layoffs', 'Layoffs'), ('Hiring Freeze', 'Hiring Freeze'), ('Hiring', 'Hiring')], default='Hiring', max_length=50)),
-                ('lastt_update', models.DateTimeField(default=django.utils.timezone.now)),
-                ('notes', models.CharField(blank=True, max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50, unique=True)),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("Layoffs", "Layoffs"),
+                            ("Hiring Freeze", "Hiring Freeze"),
+                            ("Hiring", "Hiring"),
+                        ],
+                        default="Hiring",
+                        max_length=50,
+                    ),
+                ),
+                (
+                    "lastt_update",
+                    models.DateTimeField(default=django.utils.timezone.now),
+                ),
+                ("notes", models.CharField(blank=True, max_length=100)),
             ],
         ),
     ]

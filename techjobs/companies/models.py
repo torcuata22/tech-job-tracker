@@ -7,9 +7,13 @@ class Company(models.Model):
         LAYOFFS = "Layoffs"
         HIRING_FREEZE = "Hiring Freeze"
         HIRING = "Hiring"
-        
+
     name = models.CharField(max_length=50, unique=True, null=False)
-    status = models.CharField(max_length=50 ,choices = CompanyStatus.choices, default=CompanyStatus.HIRING)
-    lastt_update = models.DateTimeField(default = now, editable=True)
+    status = models.CharField(
+        max_length=50, choices=CompanyStatus.choices, default=CompanyStatus.HIRING
+    )
+    lastt_update = models.DateTimeField(default=now, editable=True)
     notes = models.CharField(max_length=100, blank=True)
-    
+
+    def __str__(self):
+        return self.name
