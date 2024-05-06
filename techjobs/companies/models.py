@@ -16,5 +16,5 @@ class Company(models.Model):
     latest_update = models.DateTimeField(default=now, editable=True)
     notes = models.CharField(max_length=100, blank=True)
 
-    def __str__(self)->str:
-        return f'{self.name}'
+    def __str__(self) -> str:
+        return f"{self.name}"
